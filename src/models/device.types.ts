@@ -58,3 +58,4 @@ export interface IDeviceDriver extends EventEmitter {
   getStatus(): Promise<IDeviceInfo>;
   isAvailable(): boolean;
 }
+

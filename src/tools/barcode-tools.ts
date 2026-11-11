@@ -238,3 +238,4 @@ export function registerBarcodeTools(server: McpServer): void {
     }
   );
 }
+

@@ -71,3 +71,4 @@ export const DEFAULT_CONFIG: HardwareMcpConfig = {
     },
   ],
 };
+

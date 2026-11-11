@@ -67,3 +67,4 @@ export function registerDeviceTools(server: McpServer): void {
     }
   );
 }
+

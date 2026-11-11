@@ -206,3 +206,4 @@ export class VirtualPrinterDriver extends BaseDriver {
     logger.info(`VirtualPrinter:${this.id}`, 'Virtual printer disconnected');
   }
 }
+

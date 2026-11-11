@@ -181,3 +181,4 @@ export abstract class BaseDriver extends EventEmitter implements IDeviceDriver {
   protected abstract doConnect(): Promise<void>;
   protected abstract doDisconnect(): Promise<void>;
 }
+

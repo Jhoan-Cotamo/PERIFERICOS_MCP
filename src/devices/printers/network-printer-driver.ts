@@ -62,3 +62,4 @@ export class NetworkPrinterDriver extends EscPosPrinterDriver {
     });
   }
 }
+

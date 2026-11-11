@@ -170,3 +170,4 @@ export function decodeRawAsciiReport(report: Buffer): { text: string; isEnter: b
 
   return { text, isEnter };
 }
+

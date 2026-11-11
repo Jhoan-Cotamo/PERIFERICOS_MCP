@@ -128,3 +128,4 @@ export interface PrinterStatusInfo {
   totalJobsFailed: number;
   lastError?: string;
 }
+

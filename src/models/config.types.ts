@@ -47,3 +47,4 @@ export interface HardwareMcpConfig {
   printQueue: PrintQueueConfig;
   devices: DeviceConfigItem[];
 }
+

@@ -187,3 +187,4 @@ export class BarcodeManager extends EventEmitter {
 }
 
 export const barcodeManager = BarcodeManager.getInstance();
+

@@ -112,3 +112,4 @@ export class SerialBarcodeDriver extends BaseDriver {
     }
   }
 }
+

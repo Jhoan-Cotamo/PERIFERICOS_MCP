@@ -132,3 +132,4 @@ export function registerElectronicScalePlugin(): void {
 
   logger.info('ScalePlugin', 'Driver de balanza electrónica registrado exitosamente.');
 }
+

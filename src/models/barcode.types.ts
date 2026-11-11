@@ -17,3 +17,4 @@ export interface BarcodeListenerState {
   totalScans: number;
   lastScan?: BarcodeEvent;
 }
+

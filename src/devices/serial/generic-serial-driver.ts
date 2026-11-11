@@ -113,3 +113,4 @@ export class GenericSerialDriver extends BaseDriver {
     }
   }
 }
+

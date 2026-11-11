@@ -78,3 +78,4 @@ export class VirtualBarcodeDriver extends BaseDriver {
     logger.info(`VirtualBarcode:${this.id}`, 'Virtual Barcode Scanner disconnected');
   }
 }
+

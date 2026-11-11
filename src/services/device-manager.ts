@@ -315,3 +315,4 @@ export class DeviceManager extends EventEmitter {
 }
 
 export const deviceManager = DeviceManager.getInstance();
+

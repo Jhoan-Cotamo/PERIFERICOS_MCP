@@ -78,3 +78,4 @@ export class UnsupportedDeviceError extends HardwareMcpError {
     this.name = 'UnsupportedDeviceError';
   }
 }
+

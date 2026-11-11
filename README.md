@@ -502,3 +502,4 @@ Ahora el nuevo periférico puede ser declarado en `hardware.config.json` con `"d
 ## 📄 Licencia
 
 Este proyecto está distribuido bajo la licencia **MIT**. Consulta el archivo `LICENSE` para más información.
+

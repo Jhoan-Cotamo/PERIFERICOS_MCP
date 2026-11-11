@@ -82,3 +82,4 @@ main().catch((err) => {
   logger.error('Server', `Fatal startup error: ${err instanceof Error ? err.message : String(err)}`);
   process.exit(1);
 });
+

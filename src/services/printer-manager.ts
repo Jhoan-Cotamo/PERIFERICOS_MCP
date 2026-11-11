@@ -173,3 +173,4 @@ export class PrinterManager {
 }
 
 export const printerManager = PrinterManager.getInstance();
+

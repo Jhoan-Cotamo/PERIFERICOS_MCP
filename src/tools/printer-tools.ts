@@ -419,3 +419,4 @@ export function registerPrinterTools(server: McpServer): void {
     }
   );
 }
+
