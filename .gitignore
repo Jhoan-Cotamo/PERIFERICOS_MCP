@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build Output
+dist/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+
+# OS
+Thumbs.db
+.DS_Store

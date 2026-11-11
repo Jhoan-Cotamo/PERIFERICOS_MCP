@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "hardware-mcp": {
+      "command": "node",
+      "args": [
+        "C:/Users/WINDOWS/OneDrive/Documentos/PERIFERICOS_MCP/dist/server/index.js"
+      ],
+      "env": {
+        "HARDWARE_CONFIG_PATH": "C:/Users/WINDOWS/OneDrive/Documentos/PERIFERICOS_MCP/hardware.config.json"
+      }
+    }
+  }
+}

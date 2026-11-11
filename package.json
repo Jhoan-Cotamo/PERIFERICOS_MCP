@@ -1,0 +1,47 @@
+{
+  "name": "hardware-mcp",
+  "version": "1.0.0",
+  "description": "Universal Hardware MCP Server - Access physical USB HID barcode scanners, ESC/POS thermal printers, and serial devices from any AI agent or application.",
+  "main": "dist/server/index.js",
+  "type": "module",
+  "bin": {
+    "hardware-mcp": "./dist/server/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node dist/server/index.js",
+    "dev": "tsx src/server/index.ts",
+    "test": "tsx tests/test-integration.ts",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/server/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "hardware",
+    "escpos",
+    "thermal-printer",
+    "xprinter",
+    "barcode-scanner",
+    "usb-hid",
+    "serialport",
+    "iot",
+    "pos"
+  ],
+  "author": "Hardware MCP Team",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "node-hid": "^3.4.0",
+    "node-thermal-printer": "^4.6.1",
+    "serialport": "^13.0.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@types/node-hid": "^1.3.4",
+    "@types/serialport": "^8.0.5",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}

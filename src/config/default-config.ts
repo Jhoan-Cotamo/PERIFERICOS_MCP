@@ -1,0 +1,73 @@
+import { HardwareMcpConfig } from '../models/config.types.js';
+
+export const DEFAULT_CONFIG: HardwareMcpConfig = {
+  server: {
+    name: 'hardware-mcp',
+    version: '1.0.0',
+    enableVirtualFallback: true, // Enables virtual devices if no physical ones are connected
+  },
+  logging: {
+    level: 'info',
+    logToFile: true,
+    filePath: 'logs/hardware-mcp.log',
+  },
+  autoDiscovery: {
+    enabled: true,
+    intervalMs: 5000,
+    scanUsbHid: true,
+    scanSerial: true,
+    includeKnownVendorsOnly: false,
+  },
+  printQueue: {
+    maxConcurrentJobsPerPrinter: 1,
+    maxRetries: 3,
+    retryDelayMs: 1500,
+    jobTimeoutMs: 15000,
+    enableDeduplication: true,
+    deduplicationWindowMs: 4000,
+  },
+  devices: [
+    {
+      id: 'scanner-virtual-01',
+      type: 'barcode_scanner',
+      driver: 'virtual-barcode',
+      name: 'Virtual Barcode Scanner (Demo/Test)',
+      enabled: true,
+      isDefault: true,
+      connectionType: 'virtual',
+      options: {
+        autoScanIntervalMs: 0, // Disabled periodic scan by default; triggerable via simulateBarcodeScan
+      },
+    },
+    {
+      id: 'printer-virtual-01',
+      type: 'thermal_printer',
+      driver: 'virtual-printer',
+      name: 'Virtual Thermal Printer (Preview/Spool)',
+      enabled: true,
+      isDefault: true,
+      connectionType: 'virtual',
+      options: {
+        width: 48,
+        spoolFile: 'logs/virtual-printer-spool.txt',
+      },
+    },
+    {
+      id: 'printer-xprinter-01',
+      type: 'thermal_printer',
+      driver: 'xprinter',
+      name: 'XPrinter XP-N160I (ESC/POS)',
+      enabled: false, // User can enable or configure port / IP
+      isDefault: false,
+      connectionType: 'tcp',
+      connectionParams: {
+        host: '192.168.1.100',
+        tcpPort: 9100,
+      },
+      options: {
+        width: 48,
+        characterSet: 'PC850_MULTILINGUAL',
+      },
+    },
+  ],
+};

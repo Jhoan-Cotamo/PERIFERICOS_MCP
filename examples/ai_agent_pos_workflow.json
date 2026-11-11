@@ -1,0 +1,100 @@
+{
+  "scenario": "Punto de Venta Autónomo asistido por Agente IA (POS Retail)",
+  "system_prompt": "Eres el asistente de punto de venta (POS) de la tienda. Tu función es consultar el inventario, esperar el escaneo de productos por código de barras mediante la herramienta waitForBarcode, calcular totales y, al cerrar la venta, imprimir el ticket fiscal con printReceipt y abrir el cajón monedero con openCashDrawer.",
+  "workflow_steps": [
+    {
+      "step": 1,
+      "description": "El agente consulta los periféricos disponibles",
+      "tool_call": {
+        "name": "listDevices",
+        "arguments": {}
+      },
+      "expected_response": {
+        "devices": [
+          {
+            "id": "scanner-virtual-01",
+            "type": "barcode_scanner",
+            "name": "Virtual Barcode Scanner (Demo/Test)",
+            "status": "connected"
+          },
+          {
+            "id": "printer-virtual-01",
+            "type": "thermal_printer",
+            "name": "Virtual Thermal Printer (Preview/Spool)",
+            "status": "connected"
+          }
+        ]
+      }
+    },
+    {
+      "step": 2,
+      "description": "El agente espera el escaneo del primer producto",
+      "tool_call": {
+        "name": "waitForBarcode",
+        "arguments": {
+          "timeout": 30000
+        }
+      },
+      "expected_response": {
+        "success": true,
+        "barcode": "7701234567890",
+        "deviceId": "scanner-virtual-01",
+        "timestamp": "2026-11-11T20:13:44.167Z"
+      }
+    },
+    {
+      "step": 3,
+      "description": "El agente finaliza la venta, emite el ticket e instruye la apertura del cajón monedero",
+      "tool_call": {
+        "name": "printReceipt",
+        "arguments": {
+          "header": "ALMACÉN EL ÉXITO COMERCIAL",
+          "subheader": "Régimen Común - Factura POS",
+          "businessInfo": {
+            "taxId": "NIT 900.555.888-1",
+            "address": "Av. Santander # 45-10",
+            "phone": "310 999 8877"
+          },
+          "orderNumber": "POS-00892",
+          "cashier": "Agente IA Antigravity",
+          "items": [
+            {
+              "name": "Café Colombiano Especial 500g",
+              "quantity": 2,
+              "price": 24000
+            },
+            {
+              "name": "Galletas de Mantequilla",
+              "quantity": 1,
+              "price": 8500
+            }
+          ],
+          "taxes": [
+            {
+              "name": "IVA 19%",
+              "amount": 9025
+            }
+          ],
+          "subtotal": 56500,
+          "total": 56500,
+          "paymentMethod": "Efectivo",
+          "amountPaid": 60000,
+          "change": 3500,
+          "footer": "¡Gracias por su visita! www.almacenelexito.com",
+          "openDrawer": true,
+          "cut": true,
+          "beep": true
+        }
+      },
+      "expected_response": {
+        "success": true,
+        "jobId": "job_1794428024169_3pb3s",
+        "status": "completed",
+        "deviceId": "printer-virtual-01",
+        "total": 56500,
+        "itemCount": 2,
+        "message": "Recibo impreso exitosamente."
+      }
+    }
+  ]
+}
